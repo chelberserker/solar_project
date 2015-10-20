@@ -19,7 +19,7 @@ def read_space_objects_data_from_file(input_filename):
             if len(line.strip()) == 0 or line[0] == '#':
                 continue  # пустые строки и строки-комментарии пропускаем
             object_type = line.split()[0].lower()
-            if object_type == "star":  # FIXME: do the same for planet
+            if object_type == "star":  
                 star = Star()
                 parse_star_parameters(line, star)
                 objects.append(star)
@@ -101,7 +101,7 @@ def write_space_objects_data_to_file(output_filename, space_objects):
     **space_objects** — список объектов планет и звёзд
     """
     with open(output_filename, 'w') as out_file:
-        for obj in objects:
+        for obj in space_objects:
             print(out_file, obj.type, ' ' ,obj.R, ' ', obj.color, ' ', obj.m, ' ', obj.x, ' ', obj.y, ' ', obj.Vx, ' ', obj.Vy)
 
 

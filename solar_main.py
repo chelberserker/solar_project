@@ -52,7 +52,7 @@ def start_execution():
     perform_execution = True
     start_button['text'] = "Pause"
     start_button['command'] = stop_execution
-
+	
     execution()
     print('Started execution...')
 
