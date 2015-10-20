@@ -14,6 +14,7 @@ def read_space_objects_data_from_file(input_filename):
     """
 
     objects = []
+    print(input_filename)   #debug print
     with open(input_filename) as input_file:
         for line in input_file:
             if len(line.strip()) == 0 or line[0] == '#':
@@ -48,7 +49,7 @@ def parse_star_parameters(line, star):
     **line** — строка с описание звезды.
     **star** — объект звезды.
     """    
-    A = input().split(sep = ' ')
+    A = line.split(sep = ' ')
     line = A[0]
     star.R = int(A[1])
     star.color = A[2]
@@ -78,7 +79,7 @@ def parse_planet_parameters(line, planet):
     **line** — строка с описание планеты.
     **planet** — объект планеты.
     """
-    A = input().split(sep = ' ')
+    A = line.split(sep = ' ')
     line = A[0]
     planet.R = int(A[1])
     planet.color = A[2]
